@@ -1,0 +1,448 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;500;700&display=swap");
+
+/* Base */
+:root {
+  --clr-primary: rgb(124, 11, 162);
+  --clr-dark: #231b2b;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Nunito", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(to right, black, rgb(96, 0, 128), black);
+  color: #fff;
+  overflow-x: hidden;
+  padding-top: 70px; /* Prevent content hiding behind navbar */
+}
+
+.container {
+  margin-top: 20px;
+  width: 85%;
+  margin: 0 auto;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header,
+.section {
+  width: 100%;
+  padding: 80px 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.mt {
+  margin-top: 30px;
+}
+
+/* Typography */
+.primary {
+  font-size: 50px;
+  font-weight: 700;
+  -webkit-text-stroke: 3px var(--clr-dark);
+}
+
+.primary span {
+  color: var(--clr-primary);
+  -webkit-text-stroke: 0.2px #fff;
+}
+
+.primary.mb1 {
+  font-size: 60px;
+  margin-bottom: 20px;
+}
+
+.primary.mb2 {
+  padding-top: 100px;
+}
+
+.primary.mb3 {
+  margin-top: 50px;
+  padding-bottom: 20px;
+}
+
+.primary.mb4 {
+  padding-bottom: 30px;
+}
+.text-block .primary {
+  margin-top: -100px;
+}
+.secondary {
+  color: var(--clr-primary);
+  -webkit-text-stroke: 0.2px #fff;
+  margin-bottom: 15px;
+}
+
+.secondary.mb1 {
+  font-size: 40px;
+  margin-bottom: 25px;
+}
+
+.secondary.mb2 {
+  font-size: 30px;
+  margin-bottom: 40px;
+}
+
+.secondary.mb3 {
+  padding-top: 40px;
+}
+.tertiary {
+  font-size: 22px;
+  line-height: 1.6;
+  padding-right: 100px;
+}
+
+.tertiary.mb3 {
+  font-size: 22px;
+  margin-top: -30px;
+}
+
+/* Headings specific size */
+.header h1 {
+  font-size: 70px;
+  font-weight: 700;
+}
+
+.header h1 span {
+  color: var(--clr-primary);
+  -webkit-text-stroke: 0.2px white;
+}
+
+/* Spacing helpers */
+.mb {
+  margin-bottom: 30px;
+  -webkit-text-stroke: 3px var(--clr-dark);
+}
+
+.mb1 {
+  font-size: 23px;
+}
+
+.mb2,
+.mb3 {
+  margin-bottom: 15px;
+}
+
+.mb4 {
+  margin: 20px 0 30px 0;
+  margin-left: 100px;
+}
+
+.mb5 {
+  margin: 25px 0 40px 0;
+}
+
+/* Navigation */
+.menu {
+  width: 100%;
+  background: linear-gradient(to right, #0e0e0e 60%, rgb(95, 31, 129));
+  padding: 3px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.menu .container {
+  justify-content: space-between;
+}
+
+.logo img {
+  width: 80px;
+  height: auto;
+  cursor: pointer;
+}
+
+.nav {
+  list-style: none;
+  display: flex;
+}
+
+.nav li {
+  margin-right: 30px;
+  font-size: 22px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #fff;
+  transition: 0.3s linear;
+}
+
+.nav a:hover,
+.nav a.active-link {
+  color: var(--clr-primary);
+}
+
+.btn {
+  padding: 20px 48px;
+  background: var(--clr-primary);
+  border-radius: 40px;
+  font-size: 18px;
+  font-weight: 500;
+  text-decoration: none;
+  color: #fff;
+  display: inline-block;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: rgb(62, 2, 83);
+}
+
+.btn-2 {
+  font-size: 35px;
+  text-decoration: none;
+  color: #ccc;
+  transition: 0.3s;
+}
+
+.btn-2:hover {
+  color: rgb(62, 2, 83);
+}
+
+.mobile-btn {
+  display: none;
+  font-size: 35px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: #fff;
+}
+
+/* Sections */
+.text-block {
+  width: 60%;
+}
+
+.visual-block img {
+  object-fit: cover;
+  box-shadow: 0 4px 15px whitesmoke;
+  border-radius: 15px;
+}
+
+/* Animations for different visuals */
+.header .visual-block img {
+  width: 80%;
+  margin-top: 100px;
+  margin-left: 75px;
+  border-radius: 50%;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  50% {
+    transform: translateY(-25px);
+  }
+}
+
+#why-us .visual-block img {
+  width: 80%;
+  margin-top: 100px;
+  margin-left: 75px;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+#explore .visual-block img {
+  width: 80%;
+  margin-left: 85px;
+  animation: swing 3s ease-in-out infinite;
+}
+
+@keyframes swing {
+  25% {
+    transform: rotate(5deg);
+  }
+  75% {
+    transform: rotate(-5deg);
+  }
+}
+
+#testimonial .visual-block img {
+  width: 600px;
+  height: 400px;
+  margin-top: -50px;
+  animation: moveSide 3s ease-in-out infinite;
+}
+
+@keyframes moveSide {
+  50% {
+    transform: translateX(25px);
+  }
+}
+
+#discount .visual-block img {
+  width: 800px;
+  border-radius: 50%;
+  object-fit: contain;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  40% {
+    transform: translateY(-25px);
+  }
+  60% {
+    transform: translateY(-12px);
+  }
+}
+
+/* Trainers */
+#trainer {
+  text-align: center;
+}
+
+.trainer img {
+  width: 400px;
+  height: 300px;
+  border-radius: 20px 80px 20px 80px;
+  margin-bottom: 10px;
+  outline: 2px solid #fff;
+  padding: 14px;
+  transition: 0.3s;
+}
+
+.trainer:hover img {
+  box-shadow: 0 4px 15px whitesmoke;
+  transform: scale(1.05);
+}
+
+#trainer .tertiary.mb3 {
+  margin-bottom: 10px;
+  padding: 0; 
+}
+
+/* Testimonial */
+.client {
+  background: #fff;
+  color: #000;
+  padding: 20px 10px;
+  margin-left: 100px;
+  text-align: center;
+  border-radius: 20px;
+  position: relative;
+  margin-top: 20px;
+}
+
+.client img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Footer */
+.footer {
+  padding: 30px 0;
+  border-top: 1px solid #fff;
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .flex {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .mobile-btn {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 12px;
+  }
+
+  .nav,
+  .menu .btn {
+    display: none;
+  }
+
+  .menu.active .nav,
+  .menu.active .btn {
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .nav li {
+    display: block;
+    margin: 20px 0;
+  }
+
+  .text-block,
+  .visual-block {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .header h1 {
+    font-size: 45px;
+  }
+
+  .primary {
+    font-size: 32px;
+  }
+
+  .secondary {
+    font-size: 22px;
+  }
+
+  .tertiary {
+    font-size: 14px;
+    padding-right: 0;
+  }
+
+  #discount .visual-block img {
+    width: 70%;
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 530px) {
+  .header h1 {
+    font-size: 34px;
+  }
+
+  .primary {
+    font-size: 25px;
+  }
+
+  .secondary {
+    font-size: 20px;
+  }
+
+  .tertiary {
+    font-size: 12px;
+  }
+
+  .btn,
+  .btn-2 {
+    font-size: 16px;
+  }
+}
