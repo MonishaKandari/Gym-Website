@@ -29,6 +29,7 @@ body {
 }
 
 .container {
+  max-width: 1500px;  
   margin-top: 20px;
   width: 85%;
   margin: 0 auto;
@@ -79,6 +80,7 @@ body {
 }
 
 .primary.mb4 {
+  padding-top: 10px;
   padding-bottom: 30px;
 }
 .text-block .primary {
@@ -132,6 +134,7 @@ body {
 }
 
 .mb1 {
+  margin-bottom: 20px;
   font-size: 23px;
 }
 
@@ -366,6 +369,10 @@ body {
 
 /* Responsive */
 @media (max-width: 768px) {
+   body {
+    font-size: 14px;
+  }
+
   .flex {
     flex-direction: column;
     text-align: center;
